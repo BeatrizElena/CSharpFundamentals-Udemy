@@ -9,8 +9,8 @@ namespace Variables
         {
             try
             {
-                var number = "1234";
-                byte b = Convert.ToByte(number);
+                string str = "true";
+                bool b = Convert.ToBoolean(str);
                 Console.WriteLine(b);
             }
             catch (Exception)
