@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Variables
 {
@@ -10,8 +7,7 @@ namespace Variables
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("{0} {1}", byte.MinValue, byte.MaxValue);
-            Console.WriteLine("{0} {1}", float.MinValue, float.MaxValue);
+            const float Pi = 3.14f; //once declared, this constant's value cannot be changed through the program.
         }
     }
 }
