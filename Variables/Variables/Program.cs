@@ -7,9 +7,9 @@ namespace Variables
     {
         static void Main(string[] args)
         {
-            int i = 1000;
-            byte b = (byte) i;
-            Console.WriteLine(b);
+            var number = "1234";
+            int i = Convert.ToInt32(number);
+            Console.WriteLine(i);
         }
     }
 }
