@@ -1,17 +1,21 @@
 ﻿using System;
+using CSharpFundamentals.Math;
 
 
-namespace Variables
+namespace CSharpFundamentals
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var a = 10;
-            var b = 3;
+            Person john = new Person();
+            john.FirstName = "John";
+            john.LastName = "Smith";
+            john.Introduce();
 
-            Console.WriteLine(a / b); // will output 3
-            Console.WriteLine((float)a / (float)b); // will output 3.33333...
+            Calculator calculator = new Calculator();
+            var result = calculator.Add(1, 2);
+            Console.WriteLine(result);
         }
     }
 }
