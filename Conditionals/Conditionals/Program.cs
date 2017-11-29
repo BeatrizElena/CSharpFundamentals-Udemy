@@ -7,19 +7,22 @@ namespace Conditionals
     {
         static void Main(string[] args)
         {
-            bool isGoldCustomer = true;
+            var season = Season.Autumn;
 
-            float price;
-            if (isGoldCustomer)
-                price = 19.95f;
-            else
+            switch (season)
             {
-                price = 29.95f;
-            }
+                case Season.Autumn:
+                    Console.WriteLine("It's autumn and a beautiful season.");
+                    break;
 
-            // The same code above can be re-written using conditional operators ? (for if) and : (for else)
-            float price2 = (isGoldCustomer) ? 19.95f : 29.95f;
-            Console.WriteLine(price);
+                case Season.Summer:
+                    Console.WriteLine("It's perfect weather to go to the beach");
+                    break;
+
+                default:
+                    Console.WriteLine("I don't understand that season");
+                    break;
+            }
         }
     }
 }
