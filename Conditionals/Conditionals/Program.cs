@@ -7,20 +7,19 @@ namespace Conditionals
     {
         static void Main(string[] args)
         {
-            int hour = 10;
+            bool isGoldCustomer = true;
 
-            if (hour > 0 && hour < 12)
-            {
-                Console.WriteLine("It's morning.");
-            }
-            else if (hour >= 12 && hour < 18)
-            {
-                Console.WriteLine("It's afternoon.");
-            }
+            float price;
+            if (isGoldCustomer)
+                price = 19.95f;
             else
             {
-                Console.WriteLine("It's evening.");
+                price = 29.95f;
             }
+
+            // The same code above can be re-written using conditional operators ? (for if) and : (for else)
+            float price2 = (isGoldCustomer) ? 19.95f : 29.95f;
+            Console.WriteLine(price);
         }
     }
 }
