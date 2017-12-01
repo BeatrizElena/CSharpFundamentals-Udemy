@@ -7,6 +7,7 @@ namespace Conditionals
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             var season = Season.Autumn;
 
             switch (season)
@@ -20,6 +21,21 @@ namespace Conditionals
                 default:
                     Console.WriteLine("I don't understand that season");
                     break;
+=======
+            int hour = 10;
+
+            if (hour > 0 && hour < 12)
+            {
+                Console.WriteLine("It's morning.");
+            }
+            else if (hour >= 12 && hour < 18)
+            {
+                Console.WriteLine("It's afternoon.");
+            }
+            else
+            {
+                Console.WriteLine("It's evening.");
+>>>>>>> parent of 6708482... Conditionals: If/Else Operators ? and :
             }
         }
     }
