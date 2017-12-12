@@ -1,30 +1,38 @@
 ﻿using System;
-
+// TimeSpan()
 namespace CSharpDateTime
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var dateTime = new System.DateTime(2017, 1, 1);
-            var now = System.DateTime.Now;
-            var today = System.DateTime.Today;
+            var timeSpan = new TimeSpan(1, 2, 3);
 
-            Console.WriteLine("Hour: " + now.Hour);
-            Console.WriteLine("Minute: " + now.Minute);
+            var timeSpan1 = new TimeSpan(1, 0, 0);
+            var timeSpan2 = TimeSpan.FromHours(1);
+            Console.WriteLine("TimeSpan(1, 2, 3) : " + timeSpan);
+            Console.WriteLine("TimeSpan(1, 0, 0) : " + timeSpan1);
+            Console.WriteLine("TimeSpan.FromHours(1) : " + timeSpan2);
 
-            // DateTime objects are inmutable. To add/subtract days, use these methods:
-            var tomorrow = now.AddDays(1);
-            var yesterday = now.AddDays(-1);
+            var start = DateTime.Now;
+            var end = DateTime.Now.AddMinutes(2);
+            var duration = end - start;
+            Console.WriteLine("Duration: " + duration);
 
-            // Convert to string methods
-            Console.WriteLine("\r\nToLongDateString() method: " + now.ToLongDateString());
-            Console.WriteLine("\nToShortDateString() method: " + now.ToShortDateString());
-            Console.WriteLine("\nToLongTimeString() method: " + now.ToLongTimeString());
-            Console.WriteLine("\nToShortTimeString() method: " + now.ToShortTimeString());
-            Console.WriteLine("\nToString() method displays Date & Time: " + now.ToString());
-            Console.WriteLine("\nToString() with format-specifier: " + now.ToString("yyyy-MM-dd"));
-            Console.WriteLine("\nToString() with more format-specifiers: " + now.ToString("yyyy-MM-dd HH:mm"));
+            // Properties
+            Console.WriteLine("Minutes Component of timeSpan Variable: " + timeSpan.Minutes);
+            Console.WriteLine("Total Minutes adds all minutes in timeSpan Variable: " + timeSpan.TotalMinutes);
+
+            // TimeSpan is inmutable
+            // Add & Subtract methods
+            Console.WriteLine("Add 8 minutes " + timeSpan.Add(TimeSpan.FromMinutes(8)));
+            Console.WriteLine("Subtract 2 minutes: " + timeSpan.Subtract(TimeSpan.FromMinutes(2)));
+
+            // ToString(): Converts TimeSpan to a string
+            // Parse() converts a string to a TimeSpan
+            Console.WriteLine("ToString() converts TimeSpan to a string: " + timeSpan.ToString());
+            Console.WriteLine("Parse from string to TimeSpan: " + TimeSpan.Parse("01:02:03"));
+
         }
     }
 }
