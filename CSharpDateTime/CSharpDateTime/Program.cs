@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CSharpDateTime
 {
@@ -6,34 +7,31 @@ namespace CSharpDateTime
     {
         static void Main(string[] args)
         {
-            var fullName = "Bea Ortiz ";
-            Console.WriteLine("Trim(): '{0}'", fullName.Trim());
-            Console.WriteLine("Trim().ToUpper: '{0}'", fullName.Trim().ToUpper());
+            var sentence = "This is going to be a really really really really really really long sentence.";
+            const int maxLength = 20;
 
-            var index = fullName.IndexOf(' ');
-            var firstName = fullName.Substring(0, index);
-            var lastName = fullName.Substring(index + 1);
-            Console.WriteLine("First Name: " + firstName);
-            Console.WriteLine("Last Name: " + lastName);
-
-            var name = fullName.Split(' ');
-            Console.WriteLine("First Name: " + name[0]);
-            Console.WriteLine("Last Name: " + name[1]);
-
-            Console.WriteLine(fullName.Replace("Bea", "Beatriz"));
-
-            if (String.IsNullOrWhiteSpace(" "))
+            if (sentence.Length < maxLength)
             {
-                Console.WriteLine("Invalid");
+                Console.WriteLine(sentence);
             }
+            else
+            {
+                var words = sentence.Split(' ');
+                var totalCharacters = 0;
+                var summaryWords = new List<string>();
 
-            var str = "25";
-            var age = Convert.ToByte((str));
-            Console.WriteLine(age);
+                foreach (var word in words)
+                {
+                    summaryWords.Add(word);
 
-            float price = 29.95f;
-            Console.WriteLine(price.ToString("C"));
-            Console.WriteLine(price.ToString("C0"));
+                    totalCharacters += word.Length + 1;
+                    if (totalCharacters > maxLength)
+                        break;
+                }
+
+                var summary = String.Join(" ", summaryWords) + "...";
+                Console.WriteLine(summary);
+            }
         }
     }
 }
